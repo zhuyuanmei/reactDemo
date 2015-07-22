@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<title>CSS3示例</title>
-<style type="text/css">
+    <meta charset="utf-8"/>
+    <title>CSS3示例</title>
+    <style type="text/css">
 .ball {
   display: inline-block;
   width: 100%;
@@ -72,76 +72,22 @@ body {
     background-position: -849px 0; }
 }
 </style>
+    <script src="../../build/react.js"></script>
+    <script src="../../build/JSXTransformer.js"></script>
 </head>
 <body>
-  <div>
-	<section class="stage">
-		<figure class="ball"><span class="shadow"></span></figure>
-	</section>
+  <div id="J_Earth">
+	<!--<section class="stage">-->
+		<!--<figure class="ball"><span class="shadow"></span></figure>-->
+	<!--</section>-->
   </div>
+  <script type="text/jsx">
+    React.render(
+        <section className="stage">
+		    <figure className="ball"><span className="shadow"></span></figure>
+	    </section>,
+        document.getElementById("J_Earth")
+     );
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
