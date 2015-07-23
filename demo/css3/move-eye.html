@@ -187,7 +187,6 @@
         input[type=checkbox] + label.check{
             top: 0px;
             left: 0px;
-
             -webkit-animation: labelOFF 0.2s ease-in 0s 1;
             box-shadow: #244766 -2px 0px 3px;
         }
@@ -225,27 +224,36 @@
         var animateStyle = {'-webkit-animation':'move-eye-skew 5s ease-out infinite','-webkit-transform':'translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg)'};
 
         var AnimationEffect = React.createClass({
-        notify: function() {
-            var currentStatus = $(e.target).attr('data-type');
-            var $animateEl = $('.iris');
+           getInitialState: function () {
+              return {
+                notify: 'checked'
+              };
+            },
+            notify: function(e) {
+                var currentStatus = $(e.target).attr('data-type');
+                var $animateEl = $('.iris');
 
-            if(currentStatus === 'on'){
-                $(e.target).attr('data-type','close');
-                $animateEl.css({'-webkit-animation':'none', '-webkit-transform':'none'});
-            }else{
-                $(e.target).attr('data-type','on');
-                $animateEl.css(animateStyle);
+                if(currentStatus === 'on'){
+                    this.setState({notify: ''});
+
+                    $(e.target).attr('data-type','close');
+                    $animateEl.css({'-webkit-animation':'none', '-webkit-transform':'none'});
+                }else{
+                    this.setState({notify: 'checked'});
+
+                    $(e.target).attr('data-type','on');
+                    $animateEl.css(animateStyle);
+                }
+            },
+            render: function () {
+              return (
+                <div className="labelBox">
+                    <input type="checkbox" checked={this.state.notify} id="wifi" data-type="on" onChange={this.notify} />
+                    <label htmlFor="wifi" className="check"></label>
+                    <label className="info">动画开关</label>
+                </div>
+              );
             }
-        },
-        render: function () {
-          return (
-            <div className="labelBox">
-                <input ref="checkbox" type="checkbox" checked='checked' id="wifi" data-type="on" onChange={this.notify} />
-                <label for="wifi" className="check"></label>
-                <label className="info">动画开关</label>
-            </div>
-          );
-        }
       });
 
       React.render(<AnimationEffect/>, document.getElementById("J_LabelBox"));
