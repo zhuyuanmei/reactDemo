@@ -277,21 +277,21 @@
     </center>
     <script type="text/jsx">
     var Fill = React.createClass({
-        handleMouseOver: function(args) {
-            if(args === 27){
-                $('.small .pointer').css('top','252px');
+        handleMouseEnter: function(e) {
+            var currentId = parseInt($(e.target).attr('data-id'));
 
+            if(currentId === 27){
+                $('.small .pointer').css('top','252px');
                 $('.small .large img').css('top','-630px');
             }else{
-                $($('.small b')[args-1]).siblings('.pointer').css('top',(args-1)*10);
-
-                $($('.small b')[args-1]).siblings('.large img').css('top',(args-1)*(-25));
+                $(e.target).siblings('.pointer').css('top',(currentId-1)*10);
+                $(e.target).siblings('.large').find('img').css('top',(-currentId+1)*25);
             }
         },
         render: function () {
           return (
             <div className="small">
-                <b onmouseover={this.handleMouseOver(1)}></b><b onmouseover={this.handleMouseOver(2)}></b><b onmouseover={this.handleMouseOver(3)}></b><b onmouseover={this.handleMouseOver(4)}></b><b onmouseover={this.handleMouseOver(5)}></b><b onmouseover={this.handleMouseOver(6)}></b><b onmouseover={this.handleMouseOver(7)}></b><b onmouseover={this.handleMouseOver(8)}></b><b onmouseover={this.handleMouseOver(9)}></b><b onmouseover={this.handleMouseOver(10)}></b><b onmouseover={this.handleMouseOver(11)}></b><b onmouseover={this.handleMouseOver(12)}></b><b onmouseover={this.handleMouseOver(13)}></b><b onmouseover={this.handleMouseOver(14)}></b><b onmouseover={this.handleMouseOver(15)}></b><b onmouseover={this.handleMouseOver(16)}></b><b onmouseover={this.handleMouseOver(17)}></b><b onmouseover={this.handleMouseOver(18)}></b><b onmouseover={this.handleMouseOver(19)}></b><b onmouseover={this.handleMouseOver(20)}></b><b onmouseover={this.handleMouseOver(21)}></b><b onmouseover={this.handleMouseOver(22)}></b><b onmouseover={this.handleMouseOver(23)}></b><b onmouseover={this.handleMouseOver(24)}></b><b onmouseover={this.handleMouseOver(25)}></b><b onmouseover={this.handleMouseOver(26)}></b><b onmouseover={this.handleMouseOver(27)}></b>
+                <b data-id="1" onMouseEnter={this.handleMouseEnter}></b><b data-id="2" onMouseEnter={this.handleMouseEnter}></b><b data-id="3" onMouseEnter={this.handleMouseEnter}></b><b data-id="4" onMouseEnter={this.handleMouseEnter}></b><b data-id="5" onMouseEnter={this.handleMouseEnter}></b><b data-id="6" onMouseEnter={this.handleMouseEnter}></b><b data-id="7" onMouseEnter={this.handleMouseEnter}></b><b data-id="8" onMouseEnter={this.handleMouseEnter}></b><b data-id="9" onMouseEnter={this.handleMouseEnter}></b><b data-id="10" onMouseEnter={this.handleMouseEnter}></b><b data-id="11" onMouseEnter={this.handleMouseEnter}></b><b data-id="12" onMouseEnter={this.handleMouseEnter}></b><b data-id="13" onMouseEnter={this.handleMouseEnter}></b><b data-id="14" onMouseEnter={this.handleMouseEnter}></b><b data-id="15" onMouseEnter={this.handleMouseEnter}></b><b data-id="16" onMouseEnter={this.handleMouseEnter}></b><b data-id="17" onMouseEnter={this.handleMouseEnter}></b><b data-id="18" onMouseEnter={this.handleMouseEnter}></b><b data-id="19" onMouseEnter={this.handleMouseEnter}></b><b data-id="20" onMouseEnter={this.handleMouseEnter}></b><b data-id="21" onMouseEnter={this.handleMouseEnter}></b><b data-id="22" onMouseEnter={this.handleMouseEnter}></b><b data-id="23" onMouseEnter={this.handleMouseEnter}></b><b data-id="24" onMouseEnter={this.handleMouseEnter}></b><b data-id="25" onMouseEnter={this.handleMouseEnter}></b><b data-id="26" onMouseEnter={this.handleMouseEnter}></b><b data-id="27" onMouseEnter={this.handleMouseEnter}></b>
                 <span className="pointer"></span>
                 <div className="large">
                     <img src="../../images/large.jpg" />
