@@ -17,21 +17,19 @@
                 <input type="text" name="displayBox" value="0" size=4 >
             </form> 
         </td>
-        <td>秒</td> 
+        <td>秒</td>
     </tr> 
 </table>
 <script>
     var x = 0;
     var y = -1;
 
-    function countMin()
-    {　
+    function countMin(){
        y = y + 1;
     　 document.displayMin.displayBox.value = y;
     　 setTimeout("countMin( )",60000);
     }
-    function countSec()
-    {　
+    function countSec(){
        x = x + 1;
     　 z = x % 60;
     　 document.displaySec.displayBox.value = z;
