@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>React Canvas</title>
+    <script src="../../build/react.js"></script>
+    <script src="../../build/JSXTransformer.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Super Bad</h1>
+    <div id="J_List"></div>
+    <!--<nav>-->
+      <!--<a>First Link</a>-->
+      <!--<a>Second Link</a>-->
+      <!--<a>Third Link</a>-->
+  <!--</nav>-->
+  </header>
+  <script type="text/jsx">
+      var names = ['First Link', 'Second Link', 'Third Link'];
+
+      React.render(
+      <nav>
+        {
+          names.map(function (name) {
+            return <a>{name}</a>
+          })
+        }
+        </nav>,
+        document.getElementById("J_List")
+      );
+   </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
